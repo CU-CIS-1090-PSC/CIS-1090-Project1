@@ -6,7 +6,7 @@
  * It is initially empty.
  * Search is case sensitive.
  */
-
+//making a note so i can commit and push
 //An array of words, initially empty
 let words = [];
 
