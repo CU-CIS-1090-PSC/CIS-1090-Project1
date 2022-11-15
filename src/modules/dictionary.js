@@ -10,35 +10,31 @@
 
 import words from "./words.js";
 
-function binarySearch(needle, haystack){
-    let start = 0;
-    let end = haystack.length;
-    while ( start < end ){
-
-        //Find the half way point
-        let middle = Math.floor((start + end) / 2);
-
-        //Find the word at the half way point
-        let middleWord = haystack[middle];
-
-        //We can log our progress if we want
-        //console.log(start, end, pivot, wordAtPivot);
-
-        //Check if we found the word
-        if ( middleWord == needle){
-            //We found it!
+function binarySearch(needle, haystack) {
+    let lookingatword = haystack.length / 2;
+    let startofsearchrange = 0;
+    let endingofsearchrang = haystack.length - 1; //?
+    lookingatword = Math.round(lookingatword);
+    while (startofsearchrange !== endingofsearchrang) {
+        lookingatword = Math.round(lookingatword);
+        startofsearchrange = Math.round(startofsearchrange);
+        endingofsearchrang = Math.round(endingofsearchrang);
+        if (haystack[lookingatword] == needle) {
             return true;
         }
-        
-        if ( middleWord < needle ){
-            //The needle comes AFTER the middle, so
-            //search between middle and end.
-            start = middle + 1;
-        } else if ( middleWord > needle ){
-            //The needle comes BEFORE the middle word,
-            // so search between start and middle
-            end = middle;
+        else {
+            if (needle < haystack[lookingatword]) {
+                endingofsearchrang = lookingatword-1;
+                lookingatword = ((lookingatword + startofsearchrange) / 2);
+            }
+            else if (needle > haystack[lookingatword]) {
+                startofsearchrange = lookingatword;
+                lookingatword = (endingofsearchrang + lookingatword) / 2;
+
+            }
+            else { console.log("something is wrong"); }
         }
+
     }
     return false;
 }
