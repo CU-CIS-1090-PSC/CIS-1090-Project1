@@ -6,15 +6,19 @@ const goodWords = [
     "aardvark",
     "fermenting",
     "photograph",
-    "zygotes",
-    "Texas"
+    "zYgotes",
+    "Texas",
+    "gods",
+    "joe"
 ];
 
 //A list of words we SHOULD NOT find
 const badWords = [
     "squanchy",
     "cromulent",
-    "Habamanosa"
+    "Habamanosa",
+    "damm",
+    "joe"
 ]
 
 //Define a teste suite

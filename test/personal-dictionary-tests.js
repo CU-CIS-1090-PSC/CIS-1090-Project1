@@ -7,7 +7,8 @@ const goodWords = [
     "fermenting",
     "photograph",
     "zygotes",
-    "Kuker"
+    "Kuker",
+    "wood"
 ];
 
 const badWords = [
