@@ -42,3 +42,13 @@ describe("SpellCheck tests", function () {
     });
 
 });
+
+describe("Spell Check add words Tests", function () {
+    it("Finds the word Reilly after adding it", function () {
+        assert.ok(!isSpelledRight("Reilly")); //Does not find the word
+        addWord("Reilly");
+        assert.ok(isSpelledRight("Reilly")); //Does find the word
+    });
+});
+
+
