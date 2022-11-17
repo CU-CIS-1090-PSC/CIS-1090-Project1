@@ -9,7 +9,7 @@ const goodWords = [
     "zYgotes",
     "Texas",
     "gods",
-    "joe"
+    "Joe"
 ];
 
 //A list of words we SHOULD NOT find
@@ -33,6 +33,7 @@ describe("Dictionary Functional Tests:", function () {
         });
     }
 
+    
     for (const word of badWords) {
         it(`Does not find the word ${word}`, function () {
             assert.ok(!search(word));
