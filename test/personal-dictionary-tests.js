@@ -7,13 +7,16 @@ const goodWords = [
     "fermenting",
     "photograph",
     "zygotes",
-    "Kuker"
+    "Kuker",
+    "wood",
+    "dog"
 ];
 
 const badWords = [
     "squanchy",
     "cromulent",
-    "Sporkula"
+    "Sporkula",
+    "brains"
 ];
 
 //Describe a test suite for the personal dictionary
