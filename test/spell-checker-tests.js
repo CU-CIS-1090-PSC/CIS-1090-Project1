@@ -31,9 +31,14 @@ describe("SpellCheck tests", function () {
             assert.ok(!isSpelledRight("Pikachu"));
         });
 
-        it("Reports that Abner is misspelled", function () {
-            assert.ok(!isSpelledRight("Abner"));
+        it("Reports that Abner is spelled right", function () {
+            assert.ok(isSpelledRight("Abner"));
         });
+
+        it("Reports that Acheson is spelled right", function () {
+            assert.ok(isSpelledRight("Acheson"));
+        });
+
 
     });
 
@@ -51,13 +56,6 @@ describe("SpellCheck tests", function () {
             addWord("bro");
             assert.ok(isSpelledRight("bro")); //Does find the word
         });
-
-        it("Finds the word bro after adding it", function () {
-            assert.ok(!isSpelledRight("bro")); //Does not find the word
-            addWord("bro");
-            assert.ok(isSpelledRight("bro")); //Does find the word
-        });
-        
         
     });
 
