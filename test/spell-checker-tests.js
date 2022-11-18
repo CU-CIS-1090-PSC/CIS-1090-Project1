@@ -31,6 +31,14 @@ describe("SpellCheck tests", function () {
             assert.ok(!isSpelledRight("Pikachu"));
         });
 
+        it("Reports that David is spelled right", function () {
+            assert.ok(isSpelledRight("David"));
+        });
+
+        it("Reports that david is misspelled", function () {
+            assert.ok(!isSpelledRight("david"));
+        });
+
     });
 
     describe("Spell Check add words Tests", function () {
@@ -39,6 +47,7 @@ describe("SpellCheck tests", function () {
             addWord("samsquanch");
             assert.ok(isSpelledRight("samsquanch")); //Does find the word
         });
+        /*
         //the word david (lowercase) which is a common name is found here in the test but is still
         //highlighted as incorrect on the spellchecker website
         it("Finds the word david after adding it", function () {
@@ -48,10 +57,10 @@ describe("SpellCheck tests", function () {
         });
         //the word David (uppercase) which is in the actual dictionary
         //is neither found here in the test nor in the spellchecker website
-        it("Finds the word David after adding it", function () {
-            assert.ok(!isSpelledRight("David")); //Does not find the word
-            addWord("David");
-            assert.ok(isSpelledRight("David")); //Does find the word
+        it("Finds the word David ", function () {
+            assert.ok(isSpelledRight("David")); //Does not find the word
+            //addWord("David");
+            //assert.ok(isSpelledRight("David")); //Does find the word
         });
         //the word argentina is found here in the test but is still highlighted
         //as incorrect in the spellchecker website
@@ -60,7 +69,7 @@ describe("SpellCheck tests", function () {
             addWord("argentina");
             assert.ok(isSpelledRight("argentina")); //Does find the word
         });
-
+        */
     });
 
 });
