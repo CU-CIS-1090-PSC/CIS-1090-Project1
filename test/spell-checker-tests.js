@@ -39,6 +39,21 @@ describe("SpellCheck tests", function () {
             addWord("samsquanch");
             assert.ok(isSpelledRight("samsquanch")); //Does find the word
         });
+        
+        //Nevermind is not in the dictionary but it is supposed to be.  
+        
+        it("Finds the word nevermind after adding it", function () {
+            assert.ok(!isSpelledRight("nevermind")); //Does not find the word
+            addWord("nevermind");
+            assert.ok(isSpelledRight("nevermind")); //Does find the word
+        });
+        
+        // The word ass is not in the dictonary but it does not get highlighted when you type it in the dictonary. 
+        it("Finds the word Ash after adding it", function () {
+            assert.ok(!isSpelledRight("Ash")); //Does not find the word
+            addWord("Ash");
+            assert.ok(isSpelledRight("Ash")); //Does find the word
+         });
     });
 
 });
