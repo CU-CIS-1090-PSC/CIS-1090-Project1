@@ -31,6 +31,10 @@ describe("SpellCheck tests", function () {
             assert.ok(!isSpelledRight("Pikachu"));
         });
 
+        it("Reports that Abner is misspelled", function () {
+            assert.ok(!isSpelledRight("Abner"));
+        });
+
     });
 
     describe("Spell Check add words Tests", function () {
@@ -53,7 +57,8 @@ describe("SpellCheck tests", function () {
             addWord("bro");
             assert.ok(isSpelledRight("bro")); //Does find the word
         });
-
+        
+        
     });
 
 });
