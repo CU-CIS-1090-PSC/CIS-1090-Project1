@@ -39,6 +39,31 @@ describe("SpellCheck tests", function () {
             addWord("samsquanch");
             assert.ok(isSpelledRight("samsquanch")); //Does find the word
         });
+        //the word david (lowercase) which is a common name is found here in the test but is still
+        //highlighted as incorrect on the spellchecker website
+        it("Finds the word david after adding it", function () {
+            assert.ok(!isSpelledRight("david")); //Does not find the word
+            addWord("david");
+            assert.ok(isSpelledRight("david")); //Does find the word
+        });
+        //the word David (uppercase) which is in the actual dictionary
+        //is neither found here in the test nor in the spellchecker website
+        it("Finds the word David after adding it", function () {
+            assert.ok(!isSpelledRight("David")); //Does not find the word
+            addWord("David");
+            assert.ok(isSpelledRight("David")); //Does find the word
+        });
+        //the word argentina is found here in the test but is still highlighted
+        //as incorrect in the spellchecker website
+        it("Finds the word argentina after adding it", function () {
+            assert.ok(!isSpelledRight("argentina")); //Does not find the word
+            addWord("argentina");
+            assert.ok(isSpelledRight("argentina")); //Does find the word
+        });
+
     });
 
 });
+
+//most proper nouns and common names are highlughted 
+//as errors on the spellchecker website
