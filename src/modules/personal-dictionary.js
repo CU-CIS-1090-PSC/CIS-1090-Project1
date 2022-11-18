@@ -13,12 +13,12 @@ let words = [];
 //This function searches the words array for the word
 //parameter and returns true if it is found, false
 //otherwise
-function search(needle, haystack){    
+function search(needle){    
     let start = 0; 
-    let end = haystack.length; 
+    let end = words.length; 
     
     for (let i = start; i < end; i++) {
-        if (needle == haystack[i]) {
+        if (needle == words[i]) {
             return true;
         }
     }
