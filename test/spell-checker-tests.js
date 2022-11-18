@@ -50,9 +50,9 @@ describe("SpellCheck tests", function () {
         
         // The word ass is not in the dictonary but it does not get highlighted when you type it in the dictonary. 
         it("Finds the word samsquanch after adding it", function () {
-            assert.ok(!isSpelledRight("Ass")); //Does not find the word
-            addWord("Ass");
-            assert.ok(isSpelledRight("Ass")); //Does find the word
+            assert.ok(!isSpelledRight("Ash")); //Does not find the word
+            addWord("Ash");
+            assert.ok(isSpelledRight("Ash")); //Does find the word
          });
     });
 
