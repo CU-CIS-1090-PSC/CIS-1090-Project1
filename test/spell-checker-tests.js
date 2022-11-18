@@ -31,6 +31,15 @@ describe("SpellCheck tests", function () {
             assert.ok(!isSpelledRight("Pikachu"));
         });
 
+        it("Reports that Abner is spelled right", function () {
+            assert.ok(isSpelledRight("Abner"));
+        });
+
+        it("Reports that Acheson is spelled right", function () {
+            assert.ok(isSpelledRight("Acheson"));
+        });
+
+
     });
 
     describe("Spell Check add words Tests", function () {
@@ -39,6 +48,16 @@ describe("SpellCheck tests", function () {
             addWord("samsquanch");
             assert.ok(isSpelledRight("samsquanch")); //Does find the word
         });
+
+        //On the website the word "bro" has a red mark under it 
+    
+        it("Finds the word bro after adding it", function () {
+            assert.ok(!isSpelledRight("bro")); //Does not find the word
+            addWord("bro");
+            assert.ok(isSpelledRight("bro")); //Does find the word
+        });
+        
     });
 
 });
+
