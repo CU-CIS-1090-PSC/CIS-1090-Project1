@@ -2,7 +2,7 @@ import { splitIntoWords, isSpelledRight, addWord } from "../src/modules/spell-ch
 import assert from "assert"; //Utilities to help the test
 
 
-//These tests us a framework named Mocha https://mochajs.org/#getting-started
+//These tests use a framework named Mocha https://mochajs.org/#getting-started
 // "describe" and "it" are part of the mocha framework.
 
 describe("SpellCheck tests", function () {
@@ -42,3 +42,18 @@ describe("SpellCheck tests", function () {
     });
 
 });
+
+describe("Spell Check add words Tests", function () {
+    it("Finds the word Reilly after adding it", function () {
+        assert.ok(!isSpelledRight("Reilly")); //Does not find the word
+        addWord("Reilly");
+        assert.ok(isSpelledRight("Reilly")); //Does find the word
+    });
+
+    it("Reports that Texas is spelled right", function () {
+        assert.ok(isSpelledRight("Texas"));
+    });
+
+});
+
+
