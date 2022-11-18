@@ -1,46 +1,34 @@
-/**
- * This dictionary module loads a words list and exports
- * a single funtion to check if a given word is in that list.
- * 
- * That function returns true if the word is in the dictionary
- * and false if it does not.
- * 
- * The search is CASE SENSITIVE
- */
-
 import words from "./words.js";
 
 function binarySearch(needle, haystack){
-    let start = 0;
-    let end = haystack.length;
-    while ( start < end ){
+   
+    let currentArrayEndPoint = haystack.length;
+    let currentArrayStartPoint = 0;
+    let currentArrayLength = currentArrayEndPoint - currentArrayStartPoint;
+    let middleWord = Math.round((currentArrayEndPoint + currentArrayStartPoint) / 2);
 
-        //Find the half way point
-        let middle = Math.floor((start + end) / 2);
+    while(currentArrayLength > 1){
+    
 
-        //Find the word at the half way point
-        let middleWord = haystack[middle];
-
-        //We can log our progress if we want
-        //console.log(start, end, pivot, wordAtPivot);
-
-        //Check if we found the word
-        if ( middleWord == needle){
-            //We found it!
+        if(needle == (haystack[middleWord])){
             return true;
+        } else if(needle > haystack[middleWord]){
+            currentArrayStartPoint = middleWord + 1;
+            middleWord = Math.round((currentArrayEndPoint + currentArrayStartPoint) / 2);
+        } else if(needle < haystack[middleWord]){
+            currentArrayEndPoint = middleWord - 1;
+            middleWord = Math.round((currentArrayEndPoint + currentArrayStartPoint) / 2);
         }
-        
-        if ( middleWord < needle ){
-            //The needle comes AFTER the middle, so
-            //search between middle and end.
-            start = middle + 1;
-        } else if ( middleWord > needle ){
-            //The needle comes BEFORE the middle word,
-            // so search between start and middle
-            end = middle;
-        }
+    currentArrayLength = currentArrayEndPoint - currentArrayStartPoint;
     }
+
+    if(needle == haystack[currentArrayEndPoint] || needle == haystack[currentArrayStartPoint]) {
+        return true;
+    } else {
+
     return false;
+
+    }
 }
 
 export default function(word){

@@ -29,9 +29,9 @@ function isWord(aString){
 function isSpelledRight(word){
     if ( !isWord(word) )
         return true;
-    else if ( checkDictionary(word.toLowerCase()) )
+    else if ( checkPersonalDictionary(word) )
         return true;
-    else if ( checkPersonalDictionary(word.toLowerCase()) )
+    else if (checkDictionary(word.toLowerCase()) || checkDictionary(word))
         return true;
     else
         return false;

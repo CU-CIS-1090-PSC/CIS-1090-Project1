@@ -31,6 +31,14 @@ describe("SpellCheck tests", function () {
             assert.ok(!isSpelledRight("Pikachu"));
         });
 
+        it("Reports that Texas is spelled right", function () {
+            assert.ok(isSpelledRight("Texas"));
+        });
+
+        it("Reports that texas is misspelled", function () {
+            assert.ok(!isSpelledRight("texas"));
+        });
+
     });
 
     describe("Spell Check add words Tests", function () {
@@ -38,6 +46,38 @@ describe("SpellCheck tests", function () {
             assert.ok(!isSpelledRight("samsquanch")); //Does not find the word
             addWord("samsquanch");
             assert.ok(isSpelledRight("samsquanch")); //Does find the word
+        });
+    });
+
+    describe("Spell Check add words Tests", function () {
+        it("Finds the word Juan after adding it", function () {
+            assert.ok(!isSpelledRight("Juan")); //Does not find the word
+            addWord("Juan");
+            assert.ok(isSpelledRight("Juan")); //Does find the word
+        });
+    });
+
+    describe("Test addWord function", function () {
+        it("Finds the word juan after adding it", function () {
+            assert.ok(!isSpelledRight("juan")); //Does not find the word
+            addWord("juan");
+            assert.ok(isSpelledRight("juan")); //Does find the word
+        });
+    });
+
+    describe("Test addWord function", function () {
+        it("Finds the word creet after adding it", function () {
+            assert.ok(!isSpelledRight("creet")); //Does not find the word
+            addWord("creet");
+            assert.ok(isSpelledRight("creet")); //Does find the word
+        });
+    });
+
+    describe("Test addWord function", function () {
+        it("Finds the word Dame after adding it", function () {
+            assert.ok(!isSpelledRight("Dame")); //Does not find the word
+            addWord("Dame");
+            assert.ok(isSpelledRight("Dame")); //Does find the word
         });
     });
 
