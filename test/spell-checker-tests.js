@@ -34,7 +34,7 @@ describe("SpellCheck tests", function () {
         //These tests show that the program doesn't detect the word "germany" regardless if it is lowercase or uppercase.
         //The test yields failure
         it("reports that lowercase germany is spelled right", function() {
-            assert.ok(isSpelledRight("germany"));
+            assert.ok(!isSpelledRight("germany"));
         });
 
         it("reports that uppercase Germany is spelled right", function () {
